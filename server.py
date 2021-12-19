@@ -1,6 +1,9 @@
 from flask import Flask
 import logging
 from handler.router import Router
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 

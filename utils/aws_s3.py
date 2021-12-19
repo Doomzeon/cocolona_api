@@ -2,13 +2,14 @@ import boto3
 import random
 import logging
 
+import os
 
 class AWSS3Bucket:
     def __init__(self, folder: str) -> None:
         self.folder = folder
-        self.__key == "AKIAWEDK34F77LWA2JW6" # store to env file
-        self.__secret_access_key = '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'
-        self.bucket_name = 'cocolonacards' # store to env file
+        self.__key == os.getenv("KEY_S3") # store to env file
+        self.__secret_access_key = os.getenv('SECRET_ACCESS_KEY_S3')
+        self.bucket_name = os.getenv('BUCKET_NAME_S3') # store to env file
         self.s3 = boto3.client("s3", aws_access_key_id= self.__key, aws_secret_access_key= self.__secret_access_key)
         self.bucket = self.s3.Bucket()
 
