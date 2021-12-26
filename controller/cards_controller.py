@@ -12,7 +12,7 @@ class CardController:
         try:
             logging.info(f"Trying to get url for image with type : {self.type}")
             if self.type == "WML":
-                awss3_bucket = AWSS3Bucket(bucket_name=self.type)
+                awss3_bucket = AWSS3Bucket(folder=self.type)
                 return Response(
                     self.__build_payload_response(
                         message="OK", payload=awss3_bucket.get_image_url()
@@ -21,7 +21,7 @@ class CardController:
                     mimetype="application/json",
                 )
             elif self.type == "WMM":
-                awss3_bucket = AWSS3Bucket(bucket_name=self.type)
+                awss3_bucket = AWSS3Bucket(folder=self.type)
                 return Response(
                     self.__build_payload_response(
                         message="OK", payload=awss3_bucket.get_image_url()
@@ -30,7 +30,7 @@ class CardController:
                     mimetype="application/json",
                 )
             elif self.type == "WMC":
-                awss3_bucket = AWSS3Bucket(bucket_name=self.type)
+                awss3_bucket = AWSS3Bucket(folder=self.type)
                 return Response(
                     self.__build_payload_response(
                         message="OK", payload=awss3_bucket.get_image_url()
@@ -39,7 +39,7 @@ class CardController:
                     mimetype="application/json",
                 )
             elif self.type == "WW":
-                awss3_bucket = AWSS3Bucket(bucket_name=self.type)
+                awss3_bucket = AWSS3Bucket(folder=self.type)
                 return Response(
                     self.__build_payload_response(
                         message="OK", payload=awss3_bucket.get_image_url()
@@ -54,7 +54,7 @@ class CardController:
                     )
                 )
         except Exception as e:
-            logging.error(f"An error occured {e}")
+            logging.error(f"An error occured inside get_card_by_type {e}")
             return Response(
                 self.__build_payload_response(message="Internal server errore"),
                 status=500,
