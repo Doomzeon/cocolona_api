@@ -4,6 +4,9 @@ jobs:
   run_tests:
     docker:
       - image: circleci/python3.7
+        auth:
+          username: doomzeon
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run:
