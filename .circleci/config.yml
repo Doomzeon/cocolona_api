@@ -14,7 +14,3 @@ jobs:
             path: test-reports
         - store_artificats:
             path: test-reports
-workflows:
-  build_test:
-    jobs:
-      - run_tests  
