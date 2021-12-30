@@ -10,7 +10,7 @@ jobs:
           name: Install Python dependencies
           command: | 
             echo 'export PATH=$PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
-            pip3 install --user -r requirments.txt
+            pip install --user -r requirments.txt
       - run:
           name: Run unit test
           command: | 
