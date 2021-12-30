@@ -3,14 +3,14 @@ version: 2.1
 jobs:
   run_tests:
     docker:
-      - image: circleci/python3.7.4
+      - image: circleci/python3.10.1
     steps:
       - checkout
       - run:
           name: Install Python dependencies
           command: | 
             echo 'export PATH=$PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
-            pip install --user -r requirments.txt
+            pip3 install --user -r requirments.txt
       - run:
           name: Run unit test
           command: | 
