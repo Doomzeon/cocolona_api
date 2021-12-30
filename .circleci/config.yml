@@ -1,10 +1,8 @@
 
 version: 2.1
-jobs:
-  runt_tests:
-  docker:
-    - image: circleci/python3.7.4
-  steps:
+docker:
+  - image: circleci/python3.7.4
+steps:
     - checkout
     - run:
         name: Install Python dependencies
