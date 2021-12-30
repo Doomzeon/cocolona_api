@@ -11,6 +11,7 @@ jobs:
             name: Run unit test
             command: python3 -m unittest tests/test_server.py
         - store_test_result:
-            path: test-reports
+            path: test-results
         - store_artificats:
-            path: test-reports
+            path: test-results
+            destination: tr1
