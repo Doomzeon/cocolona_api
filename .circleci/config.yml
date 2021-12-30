@@ -1,7 +1,7 @@
 
 version: 2.1
 jobs:
-  runt_tests:
+  run_tests:
     docker:
       - image: circleci/python3.7.4
     steps:
