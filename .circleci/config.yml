@@ -14,4 +14,3 @@ jobs:
             path: test-results
         - store_artificats:
             path: test-results
-            destination: tr1
