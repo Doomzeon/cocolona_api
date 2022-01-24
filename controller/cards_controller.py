@@ -17,20 +17,16 @@ class CardController:
             logging.info(f"Trying to get url for image with type : {self.type}")
             if self.type == "WML":
                 self.__text = self.awss3_bucket.get_random_text_for_card(file= 'wml')
-                self.__url = self.awss3_bucket.get_image_url_v2(type='wml')
             elif self.type == "WMM":
                 self.__text = self.awss3_bucket.get_random_text_for_card(file= 'wmm')
-                self.__url = self.awss3_bucket.get_image_url_v2(type='wmm')
             elif self.type == "WMC":
                 self.__text = self.awss3_bucket.get_random_text_for_card(file= 'wmc')
-                self.__url = self.awss3_bucket.get_image_url_v2(type='wmc')
             elif self.type == "WW":
                 self.__text = self.awss3_bucket.get_random_text_for_card(file= 'lesbian')
-                self.__url = self.awss3_bucket.get_image_url_v2(type='ww')
             
             return Response(
                 self.__build_payload_response(
-                    message="OK", payload={"text":self.__text, "url":self.__url}
+                    message="OK", payload={"text":self.__text}
                 ),
                 status=200,
                 mimetype="application/json",
