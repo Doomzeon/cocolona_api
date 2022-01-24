@@ -1,6 +1,6 @@
 import unittest
 import logging
-from server import app
+from application import app
 
 class TestFoo(unittest.TestCase):
 
