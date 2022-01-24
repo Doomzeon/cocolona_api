@@ -31,6 +31,9 @@ class AWSS3Bucket:
     def get_random_text_for_card(self, file):
         try:
             logging.info(f'Generating random card text')
+            logging.info(self.__bucket_name)
+            logging.info(self.__key_s3)
+            logging.info(self.__secret_access_key)
             content_object = self.s3_resourse.Object(self.__bucket_name, f'{file}.json')
             file_content = content_object.get()['Body'].read().decode('utf-8')
             file_json_text = json.loads(file_content)
