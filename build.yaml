@@ -1,5 +1,12 @@
 version: 0.2
 
+env:
+  shell: shell-tag
+  variables:
+    KEY_S3: "AKIAWEDK34F7SSQ23KNK"
+    SECRET_ACCESS_KEY_S3: "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"
+    BUCKET_NAME_S3: "cocolonacards"
+    
 phases:
   install:
     commands:
