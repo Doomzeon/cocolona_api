@@ -6,4 +6,4 @@ phases:
         - pip install --user -r requirements.txt
         - python3 -m unittest tests/test_server.py
     build:
-        - python3 server.py
+        - python3 application.py
